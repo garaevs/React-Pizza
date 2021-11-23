@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const Button = ({ className, outline, knopka, children }) => {
@@ -13,6 +14,10 @@ const Button = ({ className, outline, knopka, children }) => {
 			</button>
 		</div>
 	);
+};
+
+Button.propTypes = {
+	knopka: PropTypes.func,
 };
 
 export default Button;
