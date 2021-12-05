@@ -10,8 +10,9 @@ const SortPopup = React.memo(function SortPopup({ items, activeSortType, onCLick
 		setVisiblePopup(!visiblePopup);
 	};
 
-	const handleOutsideCLick = e => {
-		if (!e.path.includes(sortRef.current)) {
+	const handleOutsideCLick = event => {
+		const path = event.path || (event.composedPath && event.composedPath());
+		if (!path.includes(sortRef.current)) {
 			setVisiblePopup(false);
 		}
 	};
